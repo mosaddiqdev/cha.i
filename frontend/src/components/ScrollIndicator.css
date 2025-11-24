@@ -1,0 +1,40 @@
+.scroll-indicator {
+  position: fixed;
+  bottom: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 100;
+  padding: 8px 12px;
+}
+
+.indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.indicator-dot.active {
+  background-color: var(--color-accent-red);
+  width: 20px;
+  border-radius: var(--radius-full);
+}
+
+@media (min-width: 768px) {
+  .scroll-indicator {
+    bottom: var(--spacing-lg);
+  }
+  
+  .indicator-dot {
+    width: 7px;
+    height: 7px;
+  }
+  
+  .indicator-dot.active {
+    width: 24px;
+  }
+}
+

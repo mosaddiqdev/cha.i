@@ -5,6 +5,7 @@ import { MessageCircle } from "lucide-react";
 import "./Home.css";
 import HomeSkeleton from "../components/HomeSkeleton";
 import Logo from "../components/Logo";
+import ScrollIndicator from "../components/ScrollIndicator";
 
 const Home = () => {
   const scrollRef = useRef(null);
@@ -123,6 +124,10 @@ const Home = () => {
               </section>
             ))}
           </div>
+          <ScrollIndicator
+            scrollRef={scrollRef}
+            totalItems={characters.length}
+          />
         </>
       )}
     </div>
