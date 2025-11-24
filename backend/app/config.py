@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     
     database_url: str = "sqlite:///./data/chat.db"
     
-    cors_origins: List[str] = []
+    cors_origins: Union[List[str], str] = []
     
     log_level: str = "INFO"
     max_conversation_history: int = 50
