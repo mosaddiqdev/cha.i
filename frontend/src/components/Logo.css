@@ -1,0 +1,30 @@
+.logo-container {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.logo-txt {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.header-dot {
+  display: inline-block;
+  color: var(--color-accent-red);
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+    font-size: 1.75rem;
+  }
+}
