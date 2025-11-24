@@ -28,6 +28,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.middleware("http")
+async def log_request_origin(request, call_next):
+    origin = request.headers.get("origin")
+    logger.info(f"🌐 Request Origin: {origin}")
+    logger.info(f"📋 Allowed Origins: {settings.cors_origins}")
+    response = await call_next(request)
+    return response
+
 app.include_router(auth.router)
 app.include_router(characters.router)
 app.include_router(chat.router)
