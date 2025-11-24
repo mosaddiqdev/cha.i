@@ -42,10 +42,13 @@ app.include_router(chat.router)
 app.include_router(health.router)
 
 
+from app.core.seed import seed_data
+
 @app.on_event("startup")
 async def startup_event():
     """Initialize database on startup."""
     init_db()
+    seed_data()
     logger.info(f"✅ {settings.app_name} v{settings.version} started successfully!")
     logger.info(f"🔒 CORS Origins loaded: {settings.cors_origins}")
 
