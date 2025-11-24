@@ -39,6 +39,7 @@ async def startup_event():
     """Initialize database on startup."""
     init_db()
     logger.info(f"✅ {settings.app_name} v{settings.version} started successfully!")
+    logger.info(f"🔒 CORS Origins loaded: {settings.cors_origins}")
 
 
 @app.get("/")
