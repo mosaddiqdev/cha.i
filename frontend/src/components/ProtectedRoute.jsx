@@ -1,4 +1,4 @@
-import Preloader from "./Preloader";
+import HomeSkeleton from "./HomeSkeleton";
 import { useAuth } from "../context/AuthContext";
 import { Navigate, useLocation } from "react-router-dom";
 
@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return <Preloader />;
+    return <HomeSkeleton />;
   }
 
   if (!isAuthenticated) {

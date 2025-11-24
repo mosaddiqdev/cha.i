@@ -260,29 +260,3 @@
   pointer-events: none;
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: var(--spacing-md);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 2px;
-  background-color: var(--color-border);
-  border-radius: 2px;
-  overflow: hidden;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.scroll-line {
-  width: 20%;
-  height: 100%;
-  background-color: var(--color-accent-red);
-  animation: scroll-anim 2s infinite ease-in-out;
-  transform: translateZ(0);
-}
-
-@keyframes scroll-anim {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(500%); }
-}

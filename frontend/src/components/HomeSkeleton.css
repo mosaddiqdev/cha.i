@@ -1,0 +1,7 @@
+.home-container.skeleton-mode {
+  overflow: hidden; /* Prevent scrolling during loading */
+}
+
+.home-container.skeleton-mode .character-section {
+  pointer-events: none;
+}

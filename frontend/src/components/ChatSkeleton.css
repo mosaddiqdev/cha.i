@@ -1,0 +1,17 @@
+.chat-page-container.skeleton-mode .message-group {
+  display: flex;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+}
+
+.chat-page-container.skeleton-mode .message-bubble-skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.chat-page-container.skeleton-mode .chat-messages {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

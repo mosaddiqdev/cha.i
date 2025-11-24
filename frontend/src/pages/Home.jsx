@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import API from "../services/api";
 import { MessageCircle } from "lucide-react";
 import "./Home.css";
-import Preloader from "../components/Preloader";
+import HomeSkeleton from "../components/HomeSkeleton";
 import Logo from "../components/Logo";
 
 const Home = () => {
@@ -58,18 +58,12 @@ const Home = () => {
 
     const currentIndex = Math.round(scrollLeft / itemWidth);
 
-    // Infinite scroll loop: We prepend 2 clones and append 2 clones to create seamless wrapping
-    // Real items are at indices 2 to (2 + realItemsCount - 1)
-    // When user scrolls to a clone, instantly jump to the corresponding real item
-
     if (currentIndex < 2) {
-      // Scrolled to prepended clone - jump forward to real item at end
       const newScrollLeft = (currentIndex + realItemsCount) * itemWidth;
       scrollRef.current.style.scrollBehavior = "auto";
       scrollRef.current.scrollLeft = newScrollLeft;
       scrollRef.current.style.scrollBehavior = "";
     } else if (currentIndex >= 2 + realItemsCount) {
-      // Scrolled to appended clone - jump backward to real item at start
       const newScrollLeft = (currentIndex - realItemsCount) * itemWidth;
       scrollRef.current.style.scrollBehavior = "auto";
       scrollRef.current.scrollLeft = newScrollLeft;
@@ -80,7 +74,7 @@ const Home = () => {
   return (
     <div className="home-container">
       {isLoading ? (
-        <Preloader />
+        <HomeSkeleton />
       ) : (
         <>
           <header className="fixed-header">
@@ -119,7 +113,8 @@ const Home = () => {
                       <img
                         src={char.image}
                         alt={char.name}
-                        className="char-portrait"
+                        className="char-portrait no-select"
+                        draggable="false"
                       />
                       <div className="gradient-overlay"></div>
                     </div>
@@ -127,12 +122,6 @@ const Home = () => {
                 </div>
               </section>
             ))}
-          </div>
-
-          <div className="scroll-indicator">
-            <div className="scroll-dot"></div>
-            <div className="scroll-dot"></div>
-            <div className="scroll-dot"></div>
           </div>
         </>
       )}

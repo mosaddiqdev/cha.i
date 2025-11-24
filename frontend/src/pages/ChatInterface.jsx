@@ -4,7 +4,7 @@ import API from "../services/api";
 import CharacterProfile from "../components/CharacterProfile";
 import ChatInterface from "../components/ChatInterface";
 import ErrorBoundary from "../components/ErrorBoundary";
-import Preloader from "../components/Preloader";
+import ChatSkeleton from "../components/ChatSkeleton";
 import "./ChatPage.css";
 
 const ChatPage = () => {
@@ -36,7 +36,7 @@ const ChatPage = () => {
     setIsMobileProfileOpen(false);
   };
 
-  if (loading) return <Preloader />;
+  if (loading) return <ChatSkeleton />;
   if (!character)
     return <div className="error-screen">Character not found</div>;
 

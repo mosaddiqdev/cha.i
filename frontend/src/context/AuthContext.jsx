@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import API from "../services/api";
-import Preloader from "../components/Preloader";
+import HomeSkeleton from "../components/HomeSkeleton";
+import ChatSkeleton from "../components/ChatSkeleton";
 
 const AuthContext = createContext(null);
 
@@ -11,6 +13,7 @@ export const AuthProvider = ({ children }) => {
     !!localStorage.getItem("token")
   );
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     const initAuth = async () => {
@@ -75,7 +78,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   if (loading) {
-    return <Preloader />;
+    if (location.pathname.startsWith("/chat/")) {
+      return <ChatSkeleton />;
+    }
+    return <HomeSkeleton />;
   }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
