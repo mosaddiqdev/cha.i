@@ -13,7 +13,7 @@ _Have meaningful conversations with AI personalities tailored to your needs_
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688.svg)](https://fastapi.tiangolo.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg)](https://www.python.org/)
 
-[Live Demo](#) • [Documentation](#) • [Report Bug](#) • [Request Feature](#)
+[Live Demo](https://cha-i.vercel.app/) • [Documentation](https://github.com/mosaddiqdev/cha.i#readme) • [Report Bug](https://github.com/mosaddiqdev/cha.i/issues) • [Request Feature](https://github.com/mosaddiqdev/cha.i/issues)
 
 </div>
 
@@ -56,7 +56,7 @@ _Have meaningful conversations with AI personalities tailored to your needs_
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/cha.i.git
+git clone https://github.com/mosaddiqdev/cha.i.git
 cd cha.i
 ```
 
@@ -194,7 +194,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-Project Link: [https://github.com/yourusername/cha.i](https://github.com/yourusername/cha.i)
+Project Link: [https://github.com/mosaddiqdev/cha.i](https://github.com/mosaddiqdev/cha.i)
+
+Live Demo: [https://cha-i.vercel.app/](https://cha-i.vercel.app/)
 
 ## 🙏 Acknowledgments
 
